@@ -1,6 +1,8 @@
+import { getMovies } from "./db";
+
 const resolvers = {
     Query: {
-        name: () => "Chanyoung"
+        movies: (_, { limit, rating }) => getMovies(limit, rating),
     }
 };
 
